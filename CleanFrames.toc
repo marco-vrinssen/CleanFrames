@@ -1,0 +1,9 @@
+## Interface: 110200
+## Title: Clean Frames
+## Notes: Customizes arena frames, nameplates, and raid frames for a clean minimal UI
+## Author: MIYANKO
+## Version: 1.0.0
+
+ArenaFrames.lua
+Nameplates.lua
+RaidFrames.lua

@@ -1,14 +1,14 @@
-# Hide Auras
+# Clean Frames
 
-World of Warcraft Retail addon that hides auras and visual elements on arena frames, nameplates, and raid frames.
+World of Warcraft Retail addon that customizes arena frames, nameplates, and raid frames for a minimal, clean UI.
 
 ## Features
 
-- Hides names, debuffs, and cast bars on arena enemy frames
+- Customizes arena frames: repositions debuffs and CC remover, hides names and cast bars
 - Removes buff displays from enemy nameplates
 - Hides all buffs and debuffs on raid/party frames
 - Reduces visual clutter in competitive PvP environments
-- Allows focus on core gameplay elements without distracting aura information
+- Provides a clean, minimal UI focused on essential gameplay information
 
 ## Compatibility
 
