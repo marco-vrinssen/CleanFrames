@@ -12,39 +12,36 @@ local function customizeArenaFrame()
 		local arenaFrame = _G["CompactArenaFrameMember" .. arenaIndex]
 		if arenaFrame then
 
-			-- Hide name
-			hideElement(arenaFrame.name)
+		-- Hide name
+		hideElement(arenaFrame.name)
 
-			-- Position and resize debuff frame
-			local debuffs = arenaFrame.DebuffFrame
-			if debuffs then
-				debuffs:ClearAllPoints()
-				debuffs:SetSize(28, 28)
-				debuffs:SetPoint("BOTTOMLEFT", arenaFrame, "BOTTOMLEFT", -2, 2)
-			end
+		-- Position and resize debuff frame
+		local debuffFrame = arenaFrame.DebuffFrame
+		if debuffFrame then
+			debuffFrame:SetSize(40, 40)
+			debuffFrame:SetParent(arenaFrame)
+			hooksecurefunc(debuffFrame, "SetPoint", function(self)
+				if not self.positionLocked then
+					self.positionLocked = true
+					self:ClearAllPoints()
+					self:SetPoint("BOTTOMLEFT", arenaFrame, "BOTTOMLEFT", 4, 4)
+					self.positionLocked = false
+				end
+			end)
+		end
 
-			-- Position and resize CC remover frame
+		-- Position and resize CC remover frame
 			local ccRemover = arenaFrame.CcRemoverFrame
 			if ccRemover then
 				ccRemover:ClearAllPoints()
-				ccRemover:SetSize(28, 28)
-				ccRemover:SetPoint("TOPLEFT", arenaFrame, "TOPRIGHT", -2, 0)
-
-				-- Zoom CC remover icon
-				if ccRemover.Icon then
-					ccRemover.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				end
+				ccRemover:SetSize(40, 40)
+				ccRemover:SetPoint("TOPLEFT", arenaFrame, "TOPRIGHT", 0, 0)
 			end
 
-			-- Customize casting bar
+			-- Hide casting bar
 			local castBar = arenaFrame.CastingBarFrame
 			if castBar then
-				hideElement(castBar.Text)
-				hideElement(castBar.TextBorder)
-				hideElement(castBar.Icon)
-
-				castBar:ClearAllPoints()
-				castBar:SetPoint("BOTTOMRIGHT", arenaFrame, "BOTTOMLEFT")
+				hideElement(castBar)
 			end
 
 		end
