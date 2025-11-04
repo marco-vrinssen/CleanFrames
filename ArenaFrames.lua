@@ -53,4 +53,5 @@ end
 
 local arenaEventFrame = CreateFrame("Frame")
 arenaEventFrame:RegisterEvent("ARENA_OPPONENT_UPDATE")
+arenaEventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 arenaEventFrame:SetScript("OnEvent", customizeArenaFrame)
