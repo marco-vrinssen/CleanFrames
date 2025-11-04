@@ -1,5 +1,7 @@
 -- Customizes arena frame elements for better visibility
 
+local hookedDebuffFrames = {}
+
 local function hideElement(element)
 	if element then
 		element:Hide()
@@ -17,9 +19,12 @@ local function customizeArenaFrame()
 
 		-- Position and resize debuff frame
 		local debuffFrame = arenaFrame.DebuffFrame
-		if debuffFrame then
+		if debuffFrame and not hookedDebuffFrames[debuffFrame] then
 			debuffFrame:SetSize(40, 40)
 			debuffFrame:SetParent(arenaFrame)
+			debuffFrame:ClearAllPoints()
+			debuffFrame:SetPoint("BOTTOMLEFT", arenaFrame, "BOTTOMLEFT", 4, 4)
+			
 			hooksecurefunc(debuffFrame, "SetPoint", function(self)
 				if not self.positionLocked then
 					self.positionLocked = true
@@ -28,6 +33,8 @@ local function customizeArenaFrame()
 					self.positionLocked = false
 				end
 			end)
+			
+			hookedDebuffFrames[debuffFrame] = true
 		end
 
 		-- Position and resize CC remover frame
