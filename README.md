@@ -1,16 +1,10 @@
 # Clean Frames
 
-World of Warcraft Retail addon that customizes arena frames, nameplates, and raid frames for a minimal, clean UI.
+World of Warcraft addon to customize arena frames, nameplates, and raid frames for minimal UI.
 
 ## Features
 
-- Customizes arena frames: repositions debuffs and CC remover, hides names and cast bars
-- Removes buff displays from enemy nameplates
-- Hides all buffs and debuffs on raid/party frames
-- Reduces visual clutter in competitive PvP environments
-- Provides a clean, minimal UI focused on essential gameplay information
-
-## Compatibility
-
-- **Interface Version**: 11.2.0 (The War Within)
-- **Game Version**: World of Warcraft Retail
+- Repositions arena frame debuffs and CC remover
+- Hides arena frame names and cast bars
+- Hides buffs on enemy nameplates
+- Hides buffs and debuffs on raid and party frames
